@@ -1,9 +1,9 @@
 Baasic AngularJS Article Module Hello World
 ============
 
-In order to create a hello world sample based on the Baasic article module you should follow the steps desribed below:
+In order to create a hello world sample based on the Baasic article module you should follow the steps described below:
 
-# Prerequisits
+# Prerequisites
 
 #### Sign up for Baasic account 
 
@@ -19,7 +19,104 @@ Navigate to the application dashboard _https://dashboard.baasic.com/apps/your-ap
 
 # Create AngularJS application
 
+Create an AngularJS application by using the following code:
+
+```javascript
+    angular.module('baasicArticleHelloWorld', [
+        "baasic.api",
+        "baasic.article"
+    ])
+
+```
+
+Note that we will be using only Baasic AngularJS Core and Article SDK to build the hello world application, so you may notice that there are two dependencies defined _baasic.api_ and _baasic.article_ that we need for this app.
+
+# Configure the Baasic application
+
+In order to configure Baasic application we will need a _baasicAppProvider_ injected in the AngularJS application configuration, to do that use the following:
+
+```javascript
+   angular.module('baasicArticleHelloWorld').config(['baasicAppProvider',
+        function (baasicAppProvider) {
+
+            baasicAppProvider.create('Article-Hello-World', {
+                apiRootUrl: 'api.baasic.local',
+                apiVersion: 'beta'
+            });
+
+    }])
+```
+
+# Create Hello World Controller
+
+To fetch the hello world article that we have wrote using the Baasic article dashboard we will need simple controller that will fetch the articles from the Baasic back-end. To do that we will use the following code:
+
+```javascript
+     angular.module('baasicArticleHelloWorld').controller('MainController', ['$scope', 'baasicArticleService',
+        function($scope, articleService) {
+            $scope.articles = [];
+
+            var apiParams = {
+                embed: "Tags",
+                statuses: 'published'
+            };
+            articleService.find(apiParams)
+                .success(function (collection) {
+                    $scope.articles = collection.item;
+                });
+        }]);
+```
+
+# Create Hello World Index.html
+
+To actually display the articles from the back-end we need a mark-up and for this purpose we will use HTML5 with our AngularJS application. Create _index.html_ and use the following mark-up to display the articles:
+
+```html
+<!DOCTYPE html>
+<html ng-app="baasicArticleHelloWorld">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Baasic AngularJS Article Hello World</title>
+  </head>
+  <body>
+    <h1>Baasic AngularJS Article Hello World</h1>
+    <div ng-controller="MainController">
+        <div ng-repeat="article in articles">
+            <h2>{{article.title}}</h2>
+            <p>{{article.content}}</p>
+        </div>
+        <div ng-show="articles.length === 0">
+            <p>No articles in the application.</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-javascript-framework.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/uritemplate-min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/angular-hal-parser.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-angular-core.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-angular-article.min.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+```
+
+Dependencies for this applications, as mentioned earlier, are only Baasic AngularJS Core and Article SDK and you can use the Baasic CDN to serve the SDKs.
 
 # Source code
 
-Source code can be found on the GitHub
+Full source code can be found on the [here](https://github.com/Baasic/baasic-demo-angularjs-article-hello-world)
+
+# How to Run
+
+Well, you just need to open a _index.html_ file from the _src_ folder and thats it.
+
+# Get in touch
+
+Get in touch using one of the community channels 
+
+GitHub: [Baasic](https://github.com/Baasic)
+Google Groups: [Baasic Support](https://groups.google.com/forum/#!forum/baasic-baas)
+Twitter: [@baasical](https://twitter.com/baasical)

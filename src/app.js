@@ -17,9 +17,10 @@
         function($scope, articleService) {
             $scope.articles = [];
 
-            var apiParams = {};
-            apiParams.embed = "Tags";
-            apiParams.statuses = 'published';
+            var apiParams = {
+                embed: "Tags",
+                statuses: 'published'
+            };
             articleService.find(apiParams)
                 .success(function (collection) {
                     $scope.articles = collection.item;
