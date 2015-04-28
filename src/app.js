@@ -8,7 +8,8 @@
         function (baasicAppProvider) {
 
             baasicAppProvider.create('Article-Hello-World', {
-                apiRootUrl: 'api.baasic.local',
+                apiRootUrl: 'api.baasic.com',
+                userSSL: true,
                 apiVersion: 'beta'
             });
 
@@ -21,6 +22,7 @@
                 embed: "Tags",
                 statuses: 'published'
             };
+            $scope.isLoading = true;
             articleService.find(apiParams)
                 .success(function (collection) {
                     $scope.articles = collection.item;
@@ -32,6 +34,9 @@
                         headers: headers,
                         config: config
                     }.ToString());
+                })
+                .finally(function() {
+                    $scope.isLoading = false;
                 });
         }]);
 }(angular));
