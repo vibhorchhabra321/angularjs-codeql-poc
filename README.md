@@ -91,11 +91,11 @@ To actually display the articles from the back-end we need a mark-up and for thi
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="http://cdn.baasic.com/angularjs/baasic-javascript-framework.min.js"></script>
-    <script src="http://cdn.baasic.com/angularjs/uritemplate-min.js"></script>
-    <script src="http://cdn.baasic.com/angularjs/angular-hal-parser.js"></script>
-    <script src="http://cdn.baasic.com/angularjs/baasic-angular-core.min.js"></script>
-    <script src="http://cdn.baasic.com/angularjs/baasic-angular-article.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-javascript-framework-1.0.0.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/uritemplate-1.0.0.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/angular-hal-parser-1.0.0.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-angular-core-1.0.0.min.js"></script>
+    <script src="http://cdn.baasic.com/angularjs/baasic-angular-article-1.0.0.min.js"></script>
 
     <script src="app.js"></script>
   </body>
