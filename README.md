@@ -40,7 +40,7 @@ In order to configure Baasic application we will need a _baasicAppProvider_ inje
         function (baasicAppProvider) {
 
             baasicAppProvider.create('Article-Hello-World', {
-                apiRootUrl: 'api.baasic.local',
+                apiRootUrl: 'api.baasic.com',
                 apiVersion: 'beta'
             });
 
