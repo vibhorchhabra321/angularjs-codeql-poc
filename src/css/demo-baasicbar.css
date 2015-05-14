@@ -20,6 +20,9 @@
     width: 240px;
     display: block;
     float: left;
+    background: rgba(255,255,255,0);
+    -webkit-transition: background .2s ease-in-out;
+    transition: background .2s ease-in-out;
 }
 .baasicbar__logo:hover,
 .baasicbar__logo:focus,
@@ -41,4 +44,14 @@
     margin-left: 0;
     padding-left: 0;
     margin-right: .5em;
+}
+.baasicbar__tech__link {
+    opacity: 0.6;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+.baasicbar__tech__link:hover,
+.baasicbar__tech__link:focus,
+.baasicbar__tech__link:active {
+    opacity: 1;
 }
