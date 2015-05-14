@@ -1,6 +1,9 @@
 /*------------------------------------*\
     # base
 \*------------------------------------*/
+*, *:after, *:before {
+    box-sizing: border-box;
+}
 html {
     font-size: 125%;
     line-height: 150%;
@@ -99,6 +102,7 @@ ol, ul, dl {
     margin-bottom: 1rem;
 }
 ol, ul {
+    margin-top: 0;
     padding: 0;
     list-style-position: outside;
 }

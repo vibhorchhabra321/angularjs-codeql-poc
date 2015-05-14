@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <title>Baasic AngularJS Article Hello World</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/demo-base.css">
+    <link rel="stylesheet" href="css/demo-baasicbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -23,6 +24,18 @@
             </div>
             <div ng-show="isLoading" class="overlay">
                 <span class="loader" title="Loading&hellip;"></span class="">
+            </div>
+        </div>
+        <!-- Baasic bar -->
+        <div class="baasicbar">
+            <div class="baasicbar__content">
+                <a href="http://www.baasic.com" class="baasicbar__logo">
+                    <img src="img/tech/logo_baasic.svg" alt="Baasic">
+                </a>
+                <ul class="baasicbar__techlist">
+                    <li class="baasicbar__tech"><img src="img/tech/logo_angular.svg" alt="AngularJS"></li>
+                    <li class="baasicbar__tech"><img src="img/tech/logo_html5.svg" alt="HTML5"></li>
+                </ul>
             </div>
         </div>
     </div>
