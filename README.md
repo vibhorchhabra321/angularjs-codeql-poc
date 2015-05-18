@@ -107,7 +107,7 @@ Dependencies for this applications, as mentioned earlier, are only Baasic Angula
 
 # Source code
 
-Full source code can be found on the [here](https://github.com/Baasic/baasic-demo-angularjs-article-hello-world)
+Full source code can be found on the [GitHub](https://github.com/Baasic/baasic-demo-angularjs-article-hello-world). More information about the [Demo](http://demo.baasic.com/angularjs/article-hello-world) can be found in the blog post [here](http://www.baasic.com/posts/AngularJS-Article-Hello-World-Tutorial/).
 
 # How to Run
 
